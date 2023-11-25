@@ -1,0 +1,61 @@
+// products.pug
+
+html
+  head
+    title Product List
+
+  body
+    h1 Product List
+
+    // Ürün ekleme formu
+    form(action='/inventory/products', method='post')
+      label(for='categoryId') Category ID:
+      br
+      input(type='text', name='categoryId', id='categoryId', required)
+      br
+
+      label(for='name') Name:
+      br
+      input(type='text', name='name', id='name', required)
+      br
+
+      label(for='description') Description:
+      br
+      input(type='text', name='description', id='description', required)
+      br
+
+      label(for='price') Price:
+      br
+      input(type='number', name='price', id='price', step='0.01', required)
+      br
+
+      input(type='submit', value='Add Product')
+
+    // Mevcut ürünlerin listesi
+    each product in products
+      .product
+        h2= product.Name
+        p Description: #{product.Description}
+        p Price: #{product.Price}
+  
+        // Güncelleme formu
+        form(action=`/inventory/products/${product.ID}?_method=PUT`, method='post')
+          label(for='name') New Name:
+          br
+          input(type='text', name='name', id='name', required)
+          br
+
+          label(for='description') New Description:
+          br
+          input(type='text', name='description', id='description', required)
+          br
+
+          label(for='price') New Price:
+          br
+          input(type='number', name='price', id='price', step='0.01', required)
+          br
+
+          input(type='submit', value='Update Product')
+
+    if products.length === 0
+      p No products available

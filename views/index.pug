@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  button(onclick="window.location='/inventory/products'") Go to Products
+  button(onclick="window.location='/inventory/categories'") Go to Categories

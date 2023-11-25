@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Categories
+  body
+    h1 Categories
+
+    form(action='/inventory/categories', method='post')
+      label(for='name') Name:
+      br
+      input(type='text', name='name', id='name', required)
+      br
+      label(for='description') Description:
+      br
+      input(type='text', name='description', id='description', required)
+      br
+      label(for='url') URL:
+      br
+      input(type='text', name='url', id='url', required)
+      br  
+      input(type='submit', value='Submit')
+
+    ul
+if categories
+  each category in categories
+    li #{category.Name}
+      a(href=`/inventory/categories/${category.ID}/products`)
+        button(type='button') Ürünleri Görüntüle
+else
+  li No categories available
+
+
+

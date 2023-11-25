@@ -1,0 +1,13 @@
+html
+  head
+    title Category Detail
+
+  body
+    h1 Category Detail
+
+    ul
+      each product in products
+        li
+          | #{product.Name} - #{product.Description} - #{product.Price}
+          form(method='POST', action=`/inventory/products/${product.ID}?_method=DELETE`)
+            button(type='submit') Delete
