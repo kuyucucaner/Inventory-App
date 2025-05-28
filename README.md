@@ -1,6 +1,6 @@
 # 📦 Inventory App
 
-**Inventory App** is a simple and efficient inventory management system. It allows users to perform CRUD operations on products and categories, making it suitable for small-scale inventory tracking and control.
+**Inventory App** is a simple and efficient inventory management system. It allows users to perform CRUD operations on products and categories, making it suitable for small-scale inventory tracking and control. 
 
 ---
 
